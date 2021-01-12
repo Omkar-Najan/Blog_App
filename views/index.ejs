@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+<div class="container">
+    <h1> 
+        RESTful Blog App
+    </h1>
+        <div class="ui three stackable cards">
+            <% blogs.forEach(function(blog){ %>
+               
+                    <div class="raised card">
+                        <div class="image">
+                            <img src="<%=blog.image%>" alt="">
+                        </div>
+                        <div class="content">
+                            <h2 class="header"><%=blog.title%></h2>
+                            <div class="meta">
+                                <span class="date">Created on <%=blog.Created.toDateString()%></span>
+                            </div>
+                            <div class="description">
+                                <p><%-blog.body.substring(0,30)%>....</p>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <a href="/blogs/<%=blog._id%>">show more</a>
+                        </div>
+                    </div>
+                
+                
+            <% }) %>
+        </div>
+</div>
+<%- include("partials/footer") %>

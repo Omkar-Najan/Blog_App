@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+<div class="container img-thumbnail">
+    <h3><%=blog.title%></h3>
+    <hr>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%=blog.image%>" alt="404 Image Not Found">
+            <div class="content">
+                <span><%=blog.Created.toDateString()%></span>
+            </div>
+            <div class="description">
+                <p><%-blog.body%></p>
+            </div>
+            <br>
+            <a href="/blogs/<%=blog._id%>/edit" class="btn btn-outline-warning btn-lg">EDIT</a>
+            <form id="delete" class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                <button  class="btn btn-outline-danger btn-lg">delete</button>
+            </form>
+            <a href="/blogs" class="btn btn-outline-dark btn-lg">BACK</a>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

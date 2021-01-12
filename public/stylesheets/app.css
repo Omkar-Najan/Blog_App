@@ -1,0 +1,10 @@
+i.icon{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.container.img-thumbnail{
+    margin-top: 5em;
+}
+#delete{
+    display: inline;
+}
