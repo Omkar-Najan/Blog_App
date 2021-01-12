@@ -6,9 +6,10 @@ var express         = require("express"),
     expressSanitizer = require("express-sanitizer");
 
     // App  config
-mongoose.connect("mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
-//mongoose.connect("mongodb+srv://omkar:omkarnajan@cluster1.lik8i.mongodb.net/yelpcamp?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true , useFindAndModify: false})
 
+mongoose.connect("mongodb://localhost:27017/restful_blog_app" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
+
+// mongoose.connect("mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -30,15 +31,17 @@ var blogSchema  = new mongoose.Schema({
     title:String,
     image:String,
     body:String,
+    tags: [String],
     Created:{type:Date, default:Date.now}
 });
 var Blog = mongoose.model("Blog" , blogSchema);
 // RESTful Routes
-Blog.create({
-    title:"test",
-    image:"https://images.unsplash.com/photo-1592657483080-26097e09020f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-    body:"Hello this is a blog post!!",
-}) 
+// Blog.create({
+//     title:"test",
+//     image:"https://images.unsplash.com/photo-1592657483080-26097e09020f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+//     body:"Hello this is a blog post!!",
+//     tags: ["Science" , "Technology"] 
+// }) 
 
 app.get("/",function(req,res){
     res.redirect("/blogs");

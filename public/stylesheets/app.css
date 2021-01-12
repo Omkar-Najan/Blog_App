@@ -8,3 +8,6 @@ i.icon{
 #delete{
     display: inline;
 }
+.container.blog{
+    margin-top: 5rem;
+}

@@ -1,23 +1,41 @@
 <%- include("partials/header") %>
-<div class="container img-thumbnail">
-    <h3><%=blog.title%></h3>
-    <hr>
-    <div class="ui top attached">
-        <div class="item">
-            <img class="ui centered rounded image" src="<%=blog.image%>" alt="404 Image Not Found">
-            <div class="content">
-                <span><%=blog.Created.toDateString()%></span>
-            </div>
-            <div class="description">
+<div class="container blog">
+    <div class="col-12 text-centre">
+        <h1><%=blog.title%></h1>
+        <div class="col-6">
+            <span class="blockquote-footer"><%=blog.Created.toDateString()%></span>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="description col-6">
                 <p><%-blog.body%></p>
             </div>
-            <br>
-            <a href="/blogs/<%=blog._id%>/edit" class="btn btn-outline-warning btn-lg">EDIT</a>
-            <form id="delete" class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+            <div class="text-centre col-6">
+                <!-- <img class="img-fluid" src="<%=blog.imagec%>" alt="../src/404-error_v3.jpg"> -->
+                <img src="<%=blog.image%>" class="img-fluid" alt="Not Found">
+            </div>
+        </div>
+        <hr>
+        <% if(blog.tags.length > 0){ %>
+            <div>
+                Tags :
+                <% for(var i=0; i< blog.tags.length; i++) { 
+                    var tags_array = blog.tags[i];
+                    tags_array = tags_array.split(',');
+                    for(var j = 0; j < tags_array.length; j++){%>
+
+                <button class="btn btn-outline-success" href="tags/<%= tags_array[j] %>"> <%=  tags_array[j] %> </button> 
+            
+                <%}%> 
+            <%}%>
+            </div>
+        <%}%>
+        <br>
+        <a href="/blogs/<%=blog._id%>/edit" class="btn btn-outline-warning btn-lg">EDIT</a>
+            <form id="delete" class="form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
                 <button  class="btn btn-outline-danger btn-lg">delete</button>
             </form>
             <a href="/blogs" class="btn btn-outline-dark btn-lg">BACK</a>
-        </div>
     </div>
 </div>
 <%- include("partials/footer") %>
