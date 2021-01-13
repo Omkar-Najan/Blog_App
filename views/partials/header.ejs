@@ -35,8 +35,11 @@
                 Launch demo modal
               </button> -->
               <ul class="navbar-nav navbar-right">
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                   <a class="nav-link" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Signup/Login</a>
+                </li> -->
+                <li class="nav-item active">
+                  <a class="nav-link" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-user-plus"></i> Signup/Login <!-- accordians --></a>
                 </li>
               </ul>
             </div>
@@ -49,18 +52,182 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">SignUp/Login</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form class="" action="">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label >First name:</label>
+                <input type="text" class="form-control"   placeholder="First Name" name="fname" >
+              </div>  
+            </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname"  placeholder="Last Name" name="lname" class="form-control" >
+                </div>
+              </div> 
+          </div>
+          
+          <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input  class="form-control" type="text" placeholder="Enter Email" name="email" required>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label for="psw-repeat"><b>Confirm Password</b></label>
+                <input class="form-control" type="password" placeholder="Confirm Password" name="psw-repeat" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-check"> 
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Do you want to recieve mails?
+            </label>
+          </div>
+          <div class="clearfix">
+            <button type="submit" class="btn btn-primary" onClick="conf()">Sign Up</button>
+          </div>
+        </div>
+      </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      <!-- <div class="modal-footer">
+      </div> -->
     </div>
   </div>
 </div>
+
+<!-- Model 2 -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SignUp/Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header bg-dark" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn" style="color: aliceblue;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Signup
+                </button>
+              </h5>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <form class="" action="">
+                  <h1>Sign Up</h1>
+                  <p>Please fill in this form to create an account.</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label >First name:</label>
+                        <input type="text" class="form-control"   placeholder="First Name" name="fname" >
+                      </div>  
+                    </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label for="lname">Last name:</label>
+                          <input type="text" id="lname"  placeholder="Last Name" name="lname" class="form-control" >
+                        </div>
+                      </div> 
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input  class="form-control" type="text" placeholder="Enter Email" name="email" required>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="psw"><b>Password</b></label>
+                        <input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="psw-repeat"><b>Confirm Password</b></label>
+                        <input class="form-control" type="password" placeholder="Confirm Password" name="psw-repeat" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-check"> 
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Do you want to recieve mails?
+                    </label>
+                  </div>
+                  <div class="">
+                    <button type="submit" class="btn btn-primary" onClick="conf()">Sign Up</button>
+                  </div>
+                </div>
+              </form>      
+            </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-dark" id="headingTwo">
+              <h5 class="mb-0">
+                <button style="color: aliceblue;" class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Login
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                             <h4>Sign in to your account</h4>
+                              <form>
+                                  <div class="row">
+                                      <div class="col-12">
+                                        <Label>Email</Label>
+                                          <input type="email"placeholder="Email Address" class="form-control">
+                                      </div>
+                                  </div><br>
+                                  <div class="row">
+                                      <div class="col-12">
+                                        <label for="">Password</label>
+                                        <input type="password"placeholder="*********" class="form-control">
+                                      </div>
+                                  </div><br>
+                                  <div class="row">
+                                      <div class="col-12">
+                                          <button type="button" class="btn btn-primary">login</button>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <a href="#">forgot password </a>
+                                  <p>Don't have an account ? <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">register here</a></p>
+                                  
+                              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      <!-- <div class="modal-footer">
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<!-- accordians -->

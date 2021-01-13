@@ -7,9 +7,9 @@ var express         = require("express"),
 
     // App  config
 
-mongoose.connect("mongodb://localhost:27017/restful_blog_app" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
+// mongoose.connect("mongodb://localhost:27017/restful_blog_app" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
 
-// mongoose.connect("mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
+mongoose.connect("mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -39,7 +39,7 @@ var Blog = mongoose.model("Blog" , blogSchema);
 // Blog.create({
 //     title:"test",
 //     image:"https://images.unsplash.com/photo-1592657483080-26097e09020f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-//     body:"Hello this is a blog post!!",
+//     body:"Hello this is a blog post And I am loving it!!",
 //     tags: ["Science" , "Technology"] 
 // }) 
 
