@@ -9,7 +9,7 @@ var express         = require("express"),
 
 // mongoose.connect("mongodb://localhost:27017/restful_blog_app" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
 
-mongoose.connect("mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
+mongoose.connect("mongodb+srv://omkar:omkarnajan@cluster0.lik8i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false  })
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://OmkarAdmin:Admin@cluster0.qgukw.mongodb.net/blog_app?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
